@@ -1,0 +1,73 @@
+Name,Star Rating,Region Bonus,Bonus Amt,Team Size,RLM/HR,img_path
+The Architect,1 star,Building Speed,+4%,10,0.0625,images/architect1.png
+The Architect,2 stars,Building Speed,+8%,11,0.125,images/architect2.png
+The Architect,3 stars,Building Speed,+12%,12,0.25,images/architect3.png
+The Architect,4 stars,Building Speed,+16%,13,0.5,images/architect4.png
+The Architect,5 stars,Building Speed,+20%,14,2,images/architect5.png
+The Architect,Platinum,Building Speed,+20%,14,5,images/architect_platinum.png
+The Celebrity,1 star,Mission Success,+0.5%,8,0.0625,images/celebrity1.png
+The Celebrity,2 stars,Mission Success,+1%,9,0.125,images/celebrity2.png
+The Celebrity,3 stars,Mission Success,+1.5%,10,0.25,images/celebrity3.png
+The Celebrity,4 stars,Mission Success,+2%,11,0.5,images/celebrity4.png
+The Celebrity,5 stars,Mission Success,+2.5%,12,2,images/celebrity5.png
+The Celebrity,Platinum,Mission Success,+2.5%,12,5,images/celebrity_platinum.png
+The Economist,1 star,Train Costs,-2%,8,0.0625,images/economist1.png
+The Economist,2 stars,Train Costs,-4%,9,0.125,images/economist2.png
+The Economist,3 stars,Train Costs,-6%,10,0.25,images/economist3.png
+The Economist,4 stars,Train Costs,-8%,11,0.5,images/economist4.png
+The Economist,5 stars,Train Costs,-10%,12,2,images/economist5.png
+The Economist,Platinum,Train Costs,-10%,12,5,images/economist_platinum.png
+The Explorer,1 star,Mission Speed,+8%,8,0.0625,images/explorer1.png
+The Explorer,2 stars,Mission Speed,+16%,9,0.125,images/explorer2.png
+The Explorer,3 stars,Mission Speed,+24%,10,0.25,images/explorer3.png
+The Explorer,4 stars,Mission Speed,+32%,11,0.5,images/explorer4.png
+The Explorer,5 stars,Mission Speed,+40%,12,2,images/explorer5.png
+The Explorer,Platinum,Mission Speed,+40%,12,5,images/explorer_platinum.png
+The General,1 star,Mission Requirements,-2%,11,0.0625,images/general1.png
+The General,2 stars,Mission Requirements,-4%,12,0.125,images/general2.png
+The General,3 stars,Mission Requirements,-6%,13,0.25,images/general3.png
+The General,4 stars,Mission Requirements,-8%,14,0.5,images/general4.png
+The General,5 stars,Mission Requirements,-10%,15,2,images/general5.png
+The General,Platinum,Mission Requirements,-10%,15,5,images/general_platinum.png
+The Hacker,1 star,Mission Rewards,+2%,10,0.0625,images/hacker1.png
+The Hacker,2 stars,Mission Rewards,+4%,11,0.125,images/hacker2.png
+The Hacker,3 stars,Mission Rewards,+6%,12,0.25,images/hacker3.png
+The Hacker,4 stars,Mission Rewards,+8%,13,0.5,images/hacker4.png
+The Hacker,5 stars,Mission Rewards,+10%,14,2,images/hacker5.png
+The Hacker,Platinum,Mission Rewards,+10%,14,5,images/hacker_platinum.png
+The Pacifist,1 star,All Team Size,+5%,9,0.0625,images/pacifist1.png
+The Pacifist,2 stars,All Team Size,+10%,10,0.125,images/pacifist2.png
+The Pacifist,3 stars,All Team Size,+15%,11,0.25,images/pacifist3.png
+The Pacifist,4 stars,All Team Size,+20%,12,0.5,images/pacifist4.png
+The Pacifist,5 stars,All Team Size,+25%,13,2,images/pacifist5.png
+The Pacifist,Platinum,All Team Size,+25%,13,5,images/pacifist_platinum.png
+The Politician,1 star,All Team Speed,+5%,10,0.0625,images/politician1.png
+The Politician,2 stars,Building Costs,-2%,11,0.125,images/politician2.png
+The Politician,3 stars,Building Costs,-4%,12,0.25,images/politician3.png
+The Politician,4 stars,Building Costs,-6%,13,0.5,images/politician4.png
+The Politician,5 stars,Building Costs,-8%,14,2,images/politician5.png
+The Politician,Platinum,Building Costs,-8%,14,5,images/politician_platinum.png
+The Professional,1 star,Train Speed,+4%,9,0.0625,images/professional1.png
+The Professional,2 stars,Train Speed,+8%,10,0.125,images/professional2.png
+The Professional,3 stars,Train Speed,+12%,11,0.25,images/professional3.png
+The Professional,4 stars,Train Speed,+16%,12,0.5,images/professional4.png
+The Professional,5 stars,Train Speed,+20%,13,2,images/professional5.png
+The Professional,Platinum,Train Speed,+20%,13,5,images/professional_platinum.png
+The Scientist,1 star,Research Speed,+4%,10,0.0625,images/scientist1.png
+The Scientist,2 stars,Research Speed,+8%,11,0.125,images/scientist2.png
+The Scientist,3 stars,Research Speed,+12%,12,0.25,images/scientist3.png
+The Scientist,4 stars,Research Speed,+16%,13,0.5,images/scientist4.png
+The Scientist,5 stars,Research Speed,+20%,14,2,images/scientist5.png
+The Scientist,Platinum,Research Speed,+20%,14,5,images/scientist_platinum.png
+The Supervisor,1 star,Resource Generation,+4%,10,0.0625,images/supervisor1.png
+The Supervisor,2 stars,Resource Generation,+8%,11,0.125,images/supervisor2.png
+The Supervisor,3 stars,Resource Generation,+12%,12,0.25,images/supervisor3.png
+The Supervisor,4 stars,Resource Generation,+16%,13,0.5,images/supervisor4.png
+The Supervisor,5 stars,Resource Generation,+20%,14,2,images/supervisor5.png
+The Supervisor,Platinum,Resource Generation,+20%,14,5,images/supervisor_platinum.png
+The Trucker,1 star,Transport Rate,+5%,10,0.0625,images/trucker1.png
+The Trucker,2 stars,Transport Rate,+10%,11,0.125,images/trucker2.png
+The Trucker,3 stars,Transport Rate,+15%,12,0.25,images/trucker3.png
+The Trucker,4 stars,Transport Rate,+20%,13,0.5,images/trucker4.png
+The Trucker,5 stars,Transport Rate,+25%,14,2,images/trucker5.png
+The Trucker,Platinum,Transport Rate,+25%,14,5,images/trucker_platinum.png
