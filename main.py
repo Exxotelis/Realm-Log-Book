@@ -2,9 +2,8 @@ import streamlit as st
 import pandas as pd
 from research import Research
 
+
 # Function to load leader data from the text file into a dataframe
-
-
 def load_leader_data():
     try:
         # Read leader data from the text file
@@ -14,9 +13,8 @@ def load_leader_data():
         st.error("Leader data file not found. Please make sure the file exists.")
         return None
 
+
 # Function to calculate RLM production per hour
-
-
 def calculate_rlm_production(selected_leader_row, level):
     try:
         base_rlm_per_hour = selected_leader_row["RLM/HR"]
@@ -26,18 +24,16 @@ def calculate_rlm_production(selected_leader_row, level):
         st.error("Invalid leader data format.")
         return None
 
+
 # Function to display additional information for the selected leader
-
-
 def display_additional_info(selected_leader_name, selected_leader_data):
     st.subheader(f"Additional Information for {selected_leader_name}:")
     st.write(f"Region Bonus: {selected_leader_data['Region Bonus']}")
     st.write(f"Bonus Amount: {selected_leader_data['Bonus Amt']}")
     st.write("---")
 
+
 # Function to handle user input and calculations
-
-
 def main():
     logo = "images/realm-logo.png"
     st.set_page_config(page_title="Leader RLM Production Calculator",
@@ -81,6 +77,8 @@ def main():
             else:
                 st.write("No image available for this leader.")
 
+            display_additional_info(selected_leader_name, selected_leader_row)
+
             rlm_production = calculate_rlm_production(
                 selected_leader_row, level)
             if rlm_production is not None:
@@ -88,11 +86,11 @@ def main():
                             \nBase Team Size: {team_size} helpers""", unsafe_allow_html=True)
 
                 research_lvl = st.slider(
-                    "Research Level", 0, 30, 0, format="%d")
+                    "Research Level", 0, 30, 0, format="%d%%")
                 leader_research_lvl = st.slider(
-                    "Leader Research Level", 0, 20, 0, format="%d")
+                    "Leader Research Level", 0, 20, 0, format="%d%%")
                 investment_lvl = st.slider(
-                    "Investment Level", 0, 10, 0, format="%d")
+                    "Investment Level", 0, 10, 0, format="%d%%")
 
                 research = Research()
 
@@ -115,44 +113,67 @@ def main():
                 st.write(f"""The total RLM/HR for {selected_leader_name} is: {
                          total_combined_increase:.2f} RLM per hour""")
     with col3:
+        # Function to add calculator
         def add_calc():
-            # Button to toggle calculator choices visibility
-            show_choices = st.button(
-                "Click here to add Calculator")
-            additional_rlm_percentage = 0  # Initialize additional RLM percentage
+            # Initialize additional RLM percentage
+            additional_rlm_percentage = 0
 
-            if show_choices:
-                selected_option = st.selectbox(
-                    "Select the rarity of the calculator", ["Common", "Rare", "Epic", "Legendary"])
+            # Display the images
+            image_options = {
+                "Common Calculator": "images/com-calc.png",
+                "Rare Calculator": "images/rare-calc.png",
+                "Epic Calculator": "images/epic-calc.png",
+                "Legendary Calculator": "images/leg-calc.png"
+            }
 
-                # Dictionary mapping rarity to additional percentage
-                rarity_percentage = {
-                    "Common": 0.05,
-                    "Rare": 0.10,
-                    "Epic": 0.20,
-                    "Legendary": 0.50
-                }
+            # Selectbox to choose calculator rarity
+            selected_option = st.selectbox(
+                "Select the rarity of the calculator", ["Common Calculator", "Rare Calculator", "Epic Calculator", "Legendary Calculator"])
 
-                # Checkbox to calculate RLM Production
-                calculate_rlm = st.checkbox(
-                    "Calculate RLM Production", value=True)
-                if calculate_rlm:
-                    # Calculate additional RLM based on the selected calculator rarity
-                    additional_rlm_percentage = rarity_percentage[selected_option]
-                    st.write(f"""Additional RLM: {
-                             additional_rlm_percentage * 100:.2f}% of base RLM production""")
+            # Display selected image
+            selected_image = st.empty()
+            selected_image.image(
+                image_options[selected_option], caption=selected_option, use_column_width=False)
 
-                    return additional_rlm_percentage
-            return 0
-    # Call the function to get the additional RLM percentage
-    additional_rlm_percentage = add_calc()
+            # Dictionary mapping rarity to additional percentage
+            rarity_percentage = {
+                "Common Calculator": 0.05,
+                "Rare Calculator": 0.10,
+                "Epic Calculator": 0.20,
+                "Legendary Calculator": 0.50
+            }
 
-    # Now, you can use this additional_rlm_percentage in your total_combined_rlm calculation
-    total_combined_rlm = total_combined_increase + additional_rlm_percentage
+            # Checkbox to calculate RLM Production
+            calculate_rlm = st.checkbox(
+                "Calculate RLM Production", value=True)
+            if calculate_rlm:
+                # Calculate additional RLM based on the selected calculator rarity
+                additional_rlm_percentage = rarity_percentage[selected_option]
+                st.write(f"""Additional RLM: {
+                         additional_rlm_percentage * 100:.2f}% of base RLM production""")
 
-    st.subheader("Additional Calculator")
-    st.write(
-        f"The total RLM/HR for {selected_leader_name} is: {total_combined_rlm:.2f} RLM per hour")
+            return additional_rlm_percentage
+
+        # Function to calculate total combined increase
+        def calculate_total_combined_increase(rlm_production, additional_rlm_percentage):
+            total_combined_increase = rlm_production + additional_rlm_percentage
+            return total_combined_increase
+
+        # Call the function to get the additional RLM percentage
+        additional_rlm_percentage = add_calc()
+
+        # Calculate total combined increase
+        total_combined_increase_value = calculate_total_combined_increase(
+            rlm_production, additional_rlm_percentage)
+
+        # Display the result
+        st.subheader("Calculator")
+        st.write(f"""The total RLM/HR for {selected_leader_name} is: {
+                 total_combined_increase_value:.2f} RLM per hour""")
+
+        val1 = additional_rlm_percentage + total_combined_increase
+        st.write(f"""The total RLM/HR for {selected_leader_name} is: {
+                 val1:.2f} RLM per hour""")
 
 
 # Run the main function
